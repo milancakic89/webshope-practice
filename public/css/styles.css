@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: rgb(73, 73, 73);
+}
+
+
+a{
+    padding: 18px 10px;
+    text-decoration: none;
+    float: left;
+    color: #fff;
+    font-size: 18px;fa-shopping-cartfa-shopping-cart
+}
+a:hover{
+    color: rgb(255, 30, 0);
+}
+
+.navigation{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: rgb(78, 161, 235);
+    text-align: center;
+}
+
+#first{
+    margin-left: 15px;
+}
+#cart{
+    text-decoration: none;
+    font-size: 36px;
+    position: absolute;
+    right: 10px;
+    padding: 10px;
+    color: #fff;
+
+}
+#cart:hover{
+    transition: all 0.5s ease;
+    color: red;
+}
+#cart span{
+    font-size: 18px;
+    color: rgb(255, 72, 0);
+}
+.container{
+    width: 100%;
+    text-align: center;
+}
+.milans-shop{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: 1000;
+
+}
+.milans-shop strong{
+    font-size: 2.3rem;
+    color: blueviolet;
+}
+.add-product{
+    width: 600px;
+    padding: 20px;
+    margin: 0 auto;
+    border: 1px solid blueviolet;
+}
+label{
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+}
+.add-product input,
+.add-product textarea{
+    border:  1px solid blueviolet;
+    border-radius: 5px;
+    min-height: 30px;
+}
+.add-product textarea,
+.reg-input{
+    min-height: 55px;
+    min-width: 500px;
+}
+input.sub-btn{
+    min-height: 40px;
+    border: none;
+    width: 200px;
+    background-color: blueviolet;
+    border-radius: 25px;
+    color: #fff;
+    font-size: 1.1rem;
+}
+input.sub-btn:hover{
+    min-height: 40px;
+    border: none;
+    background-color: rgb(109, 7, 204);
+    border-radius: 25px;
+    cursor: pointer;
+}
