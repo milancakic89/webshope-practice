@@ -88,6 +88,19 @@ label{
     border:  1px solid blueviolet;
     border-radius: 5px;
     min-height: 30px;
+    letter-spacing: 0.3rem;
+}
+.animated-letter{
+    font-size: 1.7rem;
+    color: #fff;
+    cursor: pointer;
+    letter-spacing: 0.3rem;
+}
+.animated-letter:hover{
+    font-size: 1.9rem;
+    letter-spacing: 0.3rem;
+    transition: all 0.3s ease-out;
+    color: blueviolet;
 }
 .add-product textarea,
 .reg-input{
