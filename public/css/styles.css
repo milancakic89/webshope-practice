@@ -81,7 +81,7 @@ a:hover{
 label{
     font-size: 1.2rem;
     font-weight: 700;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
 }
 .add-product input,
 .add-product textarea{
@@ -94,6 +94,16 @@ label{
     min-height: 55px;
     max-width: 500px;
     width: 90%;
+    text-align: left;
+}
+.reg-input-select{
+    min-height: 30px;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+    width: 90%;
+    border:  1px solid blueviolet;
+    border-radius: 5px;
+    max-width: 500px;
 }
 input.sub-btn{
     min-height: 40px;
@@ -127,6 +137,8 @@ h4{
 }
 .product-single img{
     max-width: 100%;
+    min-height: 200px;
+    max-height: 200px;
 }
 .product-single-details{
     padding: 5px 10px;
@@ -166,6 +178,7 @@ h4{
 }
 h3{
     font-weight: 700;
+    text-transform: capitalize;
 }
 .input-radio{
     margin-left: 10px;

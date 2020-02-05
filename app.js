@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 
 const shopRoutes = require('./routes/shop');
 const adminRoutes = require('./routes/admin');
+const sequelize = require('./utils/database');
 
 const app = express();
 // setovanje ejsa
@@ -20,6 +21,8 @@ app.use(adminRoutes);
 app.use((req, res, next)=>{
     res.status(404).render('404',{pageTitle: 'Not found'});
 })
+sequelize.sync()
+.then(result=>{
+    app.listen(3000);
+}).catch(error => console.log('error'));
 
-
-app.listen(3000);

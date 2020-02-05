@@ -3,11 +3,19 @@
     <main class="container">
         <form class="add-product" method="POST" action="/add-product">
             <label>Title</label><br>
-            <input class="reg-input" type="text" name="productId" value=""/><br><br>
+            <input class="reg-input" type="text" name="title" value=""/><br><br>
+            <label>Category</label><br>
+            <select class="reg-input-select" name="category">
+                <option value="laptop">Laptop</option>
+                <option value="desktop">Desktop</option>
+                <option value="keyboard">Keyboard</option>
+                <option value="mouse">LMouse</option>
+            </select>
+            <br><br>
             <label>Image Url</label><br>
             <input class="reg-input" type="text" name="imageUrl" value=""/><br><br>
             <label>Price</label><br>
-            <input class="reg-input" type="number" name="price" value=""/><br><br>
+            <input class="reg-input" type="number" step="0.01" name="price" value=""/><br><br>
             <label>Description</label><br>
             <textarea  type="text" name="description" value="">
 
