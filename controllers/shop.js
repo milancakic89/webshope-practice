@@ -2,7 +2,7 @@ const Product = require('../models/Product');
 
 
 exports.getShop = (req, res, next) =>{
-    Product.findAll()
+    Product.find()
     .then(products=>{
         res.render('shop/shop',{
             pageTitle: 'Shop',
@@ -31,8 +31,9 @@ exports.postShop=(req,res,next)=>{
         res.redirect('/');
     }else{
 
-        Product.findAll({where:{category: search}})
-        .then(searched=>{
+    Product.find()
+    .then(products=>{
+            const searched = products.filter(prod => prod.category === search);
             res.render('shop/shop',{
                 pageHeader: "Result for: "+search.charAt(0).toUpperCase() + search.slice(1),
                 pageTitle: "Shop",
@@ -40,8 +41,24 @@ exports.postShop=(req,res,next)=>{
                 cartCount: 5,
                 productAmount: searched.length
             })
-        }).catch(error => console.log('not good'));
+    }).catch(error => console.log('not good'));
     
     }
  
+}
+exports.getDetailsPage = (req, res, next) =>{
+    const id = req.params.productId;
+    console.log('did we get id: '+ id)
+    Product.findById(id)
+    .then(product=>{
+        res.render('shop/details',{
+            product: product,
+            pageHeader: "Details",
+            pageTitle: "Details",
+            cartCount: 5,
+            productAmount: 1
+        })
+    })
+    .catch(err=>console.log(err))
+
 }

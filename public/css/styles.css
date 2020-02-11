@@ -49,6 +49,7 @@ a:hover{
     color: rgb(255, 72, 0);
 }
 .container{
+    padding: 20px;
     width: 100%;
     text-align: center;
     display: flex;
@@ -134,18 +135,7 @@ input.sub-btn:hover{
     border-radius: 25px;
     cursor: pointer;
 }
-.product-single{
-    padding: 10px;
-    width: 28%;
-    min-width: 250px;
-    max-width: 300px;
-    text-align: center;
-    margin: 20px;
-    border-radius: 10px;
-    -webkit-box-shadow: -1px 6px 15px 0px rgba(56, 55, 56, 0.75);
-    -moz-box-shadow: -1px 6px 15px 0px rgba(56, 55, 56, 0.75);
-    box-shadow: -1px 6px 15px 0px rgba(56, 55, 56, 0.75);
-}
+
 .product-single a{
     text-align: center;
     margin-right: 10px;
@@ -168,10 +158,12 @@ h4{
 .product-single-details{
     padding: 5px 10px;
     font-size: 1rem;
+    float: none;
     min-width: 70px;
     background-color: rgb(231, 78, 91);
     color: #fff;
     border: none;
+    margin: 0 auto;
     border-radius: 25px;
 }
 .product-single-delete{
@@ -201,7 +193,8 @@ h4{
     border-radius: 25px;
 }
 .product-single-cart:hover,
-.product-single-details:hover{
+.product-single-details:hover,
+.product-single-delete:hover{
     opacity: 0.8;
     cursor: pointer;
     transform: translateY(-2px);
@@ -246,4 +239,36 @@ h3{
 .search-bar-input{
     width:50%;
     height: 30px;
+}
+.product-details{
+    margin: 10px auto;
+
+}
+.product-details h3{
+    margin: 10px;
+}
+.product-details form{
+   display: flex;
+   justify-content: center;
+}  
+.product-details a{
+    margin: 10px;
+}
+.product-details a:hover{
+    color: #fff;
+}
+.product-details button{
+    margin: 10px;
+}
+.product-single{
+    padding: 10px;
+    width: 28%;
+    min-width: 250px;
+    max-width: 300px;
+    text-align: center;
+    margin: 20px;
+    border-radius: 10px;
+    -webkit-box-shadow: -1px 6px 15px 0px rgba(56, 55, 56, 0.75);
+    -moz-box-shadow: -1px 6px 15px 0px rgba(56, 55, 56, 0.75);
+    box-shadow: -1px 6px 15px 0px rgba(56, 55, 56, 0.75);
 }

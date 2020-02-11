@@ -26,9 +26,9 @@ exports.postAddProduct = (req, res, next)=>{
   
 
 }
-/*
+
 exports.getEditProducts = (req, res, next)=>{
-    Product.findAll()
+    Product.find()
     .then(products=>{
         res.render('admin/edit-products',{
             pageTitle: 'Edit Products',
@@ -43,20 +43,37 @@ exports.getEditProducts = (req, res, next)=>{
     })
 
 }
+
 exports.getEditSingle = (req, res, next)=>{
     const id = req.params.productId;
-    console.log('id never changes why: '+ id);
-    Product.findAll({where: {id: id}})
+    Product.findById(id)
     .then(product=>{
         res.render('admin/edit-single',{
             pageTitle: 'Edit Product',
             pageHeader: 'Edit Product',
-            product: product[0],
+            product: product,
             productAmount: 5,
             cartCount: 0
         })
     })
     .catch(error=>console.log("not have id: "+ id));
-    
-
-}*/
+}
+exports.postUpdateSingle = (req, res, next)=>{
+    const id = req.body.productId;
+    const title = req.body.title;
+    const category = req.body.category;
+    const imageUrl = req.body.imageUrl;
+    const price = req.body.price;
+    const description = req.body.description;
+    Product.findById(id)
+    .then(product=>{
+       product.title = title;
+       product.category = category;
+       product.imageUrl = imageUrl;
+       product.price = price;
+       product.description = description;
+       product.save();
+       res.redirect('/edit-products');
+    })
+    .catch(error=>console.log("not have id: "+ id));
+}

@@ -12,9 +12,9 @@
                 <h4><%= product.description %></h4>
                
                 <form action="/delete-product" method="post">
-                    <a class="product-single-edit" href="/edit-product/<%=product.id%>">Edit</a>
+                    <a class="product-single-edit" href="/edit-product/<%=product._id%>">Edit</a>
                     <button type="submit" class="product-single-delete">Delete</button>
-                    <input type="hidden" name='productId' value="<%=product.id%>"/>
+                    <input type="hidden" name='productId' value="<%=product._id%>"/>
                </form>
             </article>
             <%}%>

@@ -10,7 +10,7 @@
                 <img src="<%= product.imageUrl%>" alt="product.title"/><br><br>
                 <h2>$ <%= product.price %></h2>
                 <h4><%= product.description %></h4>
-                <button class="product-single-details">Details</button>
+                <a class="product-single-details" href="/details/<%=product._id%>">Details</a>
                 <button class="product-single-cart">Add to Cart</button>
             </article>
             <%}%>
