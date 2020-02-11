@@ -13,19 +13,44 @@ exports.postAddProduct = (req, res, next)=>{
     const imageUrl = req.body.imageUrl;
     const price = req.body.price;
     const description = req.body.description;
-    Product.create({
-        title: title,
-        category: category,
-        imageUrl: imageUrl,
-        price: price,
-        description: description
+    const product = new Product(title, category, imageUrl, price, description);
 
-    })
-    .then(result=>{
-       res.redirect('/');
-        console.log('added to database')
-    }).catch(error=>{
-        console.log('failed');
-        console.log(error);
-    });
+    product.save()
+    res.redirect('/');
+  
+
 }
+/*
+exports.getEditProducts = (req, res, next)=>{
+    Product.findAll()
+    .then(products=>{
+        res.render('admin/edit-products',{
+            pageTitle: 'Edit Products',
+            pageHeader: 'Edit Products',
+            products: products,
+            productAmount: products.length,
+            cartCount: 0
+        })
+    })
+    .catch(error=>{
+       // console.log('not going good');
+    })
+
+}
+exports.getEditSingle = (req, res, next)=>{
+    const id = req.params.productId;
+    console.log('id never changes why: '+ id);
+    Product.findAll({where: {id: id}})
+    .then(product=>{
+        res.render('admin/edit-single',{
+            pageTitle: 'Edit Product',
+            pageHeader: 'Edit Product',
+            product: product[0],
+            productAmount: 5,
+            cartCount: 0
+        })
+    })
+    .catch(error=>console.log("not have id: "+ id));
+    
+
+}*/

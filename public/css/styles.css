@@ -139,11 +139,23 @@ input.sub-btn:hover{
     width: 28%;
     min-width: 250px;
     max-width: 300px;
+    text-align: center;
     margin: 20px;
     border-radius: 10px;
     -webkit-box-shadow: -1px 6px 15px 0px rgba(56, 55, 56, 0.75);
     -moz-box-shadow: -1px 6px 15px 0px rgba(56, 55, 56, 0.75);
     box-shadow: -1px 6px 15px 0px rgba(56, 55, 56, 0.75);
+}
+.product-single a{
+    text-align: center;
+    margin-right: 10px;
+}
+.product-single form{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 0 auto;
+    height: auto;
 }
 h4{
     margin: 10px;
@@ -155,8 +167,26 @@ h4{
 }
 .product-single-details{
     padding: 5px 10px;
+    font-size: 1rem;
     min-width: 70px;
     background-color: rgb(231, 78, 91);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+}
+.product-single-delete{
+    padding: 5px 10px;
+    min-width: 70px;
+    background-color: rgb(231, 78, 91);
+    color: #fff;
+    border: none;
+    font-size: 1rem;
+    border-radius: 25px;
+}
+.product-single-edit{
+    padding: 5px 10px;
+    min-width: 70px;
+    background-color: rgb(5, 131, 153);
     color: #fff;
     border: none;
     border-radius: 25px;
@@ -164,6 +194,7 @@ h4{
 .product-single-cart{
     padding: 5px 10px;
     min-width: 70px;
+    font-size: 1rem;
     background-color: rgb(4, 153, 66);
     color: #fff;
     border: none;

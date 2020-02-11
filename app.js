@@ -1,10 +1,10 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const mongoConnect = require('./utils/database').mongoConnect;
 
-const shopRoutes = require('./routes/shop');
+//const shopRoutes = require('./routes/shop');
 const adminRoutes = require('./routes/admin');
-const sequelize = require('./utils/database');
 
 const app = express();
 // setovanje ejsa
@@ -16,13 +16,14 @@ app.set('views', 'views');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(shopRoutes);
+//app.use(shopRoutes);
 app.use(adminRoutes);
 app.use((req, res, next)=>{
-    res.status(404).render('404',{pageTitle: 'Not found'});
+    res.status(404).render('404',{pageTitle: 'Not found', cartCount: 0});
 })
-sequelize.sync()
-.then(result=>{
-    app.listen(3000);
-}).catch(error => console.log('error'));
 
+
+
+mongoConnect((client)=>{
+    app.listen(3000);
+})

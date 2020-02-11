@@ -1,9 +1,9 @@
 <%- include('../includes/header.ejs')%>
 <h1><%= pageHeader %></h1>
     <main class="container">
-        <form class="add-product" method="POST" action="/add-product">
+        <form class="add-product" method="POST" action="/update-product">
             <label>Title</label><br>
-            <input class="reg-input" type="text" name="title" value=""/><br><br>
+            <input class="reg-input" type="text" name="title" value="<%=product.title%>"/><br><br>
             <label>Category</label><br>
             <select class="reg-input-select" name="category">
                 <option value="laptop">Laptop</option>
@@ -13,14 +13,14 @@
             </select>
             <br><br>
             <label>Image Url</label><br>
-            <input class="reg-input" type="text" name="imageUrl" value=""/><br><br>
+            <input class="reg-input" type="text" name="imageUrl" value="<%=product.imageUrl%>"/><br><br>
             <label>Price</label><br>
-            <input class="reg-input" type="number" step="0.01" name="price" value=""/><br><br>
+            <input class="reg-input" type="number" step="0.01" name="price" value="<%=product.price%>"/><br><br>
             <label>Description</label><br>
-            <textarea  type="text" name="description" value="">
+            <textarea  type="text" name="description" value="<%=product.description%>">
 
             </textarea><br><br>
-            <input class="sub-btn" type="submit" name="submit" value="Add Product">
+            <input class="sub-btn" type="submit" name="submit" value="Update">
         </form>
     </main>
 

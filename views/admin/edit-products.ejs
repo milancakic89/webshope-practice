@@ -1,0 +1,27 @@
+<%- include('../includes/header.ejs')%>
+<%- include('../includes/search.ejs')%>
+    <h1><%= pageHeader %></h1>
+<main class="container">
+        <% if(products.length > 0){%>
+            <%for(let product of products){%>
+            <article class="product-single">
+                <h3><%= product.title %></h3>
+                <hr><br>
+                <img src="<%= product.imageUrl%>" alt="product.title"/><br><br>
+                <h2>$ <%= product.price %></h2>
+                <h4><%= product.description %></h4>
+               
+                <form action="/delete-product" method="post">
+                    <a class="product-single-edit" href="/edit-product/<%=product.id%>">Edit</a>
+                    <button type="submit" class="product-single-delete">Delete</button>
+                    <input type="hidden" name='productId' value="<%=product.id%>"/>
+               </form>
+            </article>
+            <%}%>
+        <%} else {%>
+            <h1>No products in the shop</h1>
+          <%}%>  
+</main>
+
+<%- include('../includes/footer.ejs')%>
+    
