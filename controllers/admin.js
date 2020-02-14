@@ -77,3 +77,11 @@ exports.postUpdateSingle = (req, res, next)=>{
     })
     .catch(error=>console.log("not have id: "+ id));
 }
+exports.deleteSingle = (req, res, next)=>{
+    const id = req.body.productId;
+    Product.findOneAndDelete(id)
+    .then(product=>{
+       res.redirect('/');
+    })
+    .catch(error=>console.log("not have id: "+ id));
+}

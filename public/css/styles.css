@@ -82,24 +82,20 @@ a:hover{
 label{
     font-size: 1.2rem;
     font-weight: 700;
-    letter-spacing: 0.1rem;
 }
 .add-product input,
 .add-product textarea{
     border:  1px solid blueviolet;
     border-radius: 5px;
     min-height: 30px;
-    letter-spacing: 0.3rem;
 }
 .animated-letter{
     font-size: 1.7rem;
     color: #fff;
     cursor: pointer;
-    letter-spacing: 0.3rem;
 }
 .animated-letter:hover{
     font-size: 1.9rem;
-    letter-spacing: 0.3rem;
     transition: all 0.3s ease-out;
     color: blueviolet;
 }
@@ -113,7 +109,6 @@ label{
 .reg-input-select{
     min-height: 30px;
     font-weight: 700;
-    letter-spacing: 0.2rem;
     width: 90%;
     border:  1px solid blueviolet;
     border-radius: 5px;
@@ -241,7 +236,7 @@ h3{
     height: 30px;
 }
 .product-details{
-    margin: 10px auto;
+    margin: 10px auto;-
 
 }
 .product-details h3{
@@ -249,8 +244,22 @@ h3{
 }
 .product-details form{
    display: flex;
+   text-align: center;
    justify-content: center;
-}  
+}
+
+.product-single form{
+    text-align: left;
+}
+.form-centered{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.product-single form{
+   margin: 0 auto;
+    max-width: 100px;
+}
 .product-details a{
     margin: 10px;
 }

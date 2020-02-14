@@ -6,16 +6,22 @@
             <%for(let product of products){%>
             <article class="product-single">
                 <h3><%= product.title %></h3>
-                <hr><br>
+                <br>
                 <img src="<%= product.imageUrl%>" alt="product.title"/><br><br>
                 <h2>$ <%= product.price %></h2>
-                <h4><%= product.description %></h4>
-               
-                <form action="/delete-product" method="post">
-                    <a class="product-single-edit" href="/edit-product/<%=product._id%>">Edit</a>
-                    <button type="submit" class="product-single-delete">Delete</button>
+                <h4><%= product.description %></h4><br>
+                <div class="form-centered">
+                    <form action="/edit-product/<%=product._id%>" method="get">
+                        <input type="submit" class="product-single-edit" value="Edit"/>
+                        <input type="hidden" name='productId' value="<%=product._id%>"/>
+                   </form>
+                   <form action="/delete-product" method="post">
+                    <input type="submit" class="product-single-delete" value="Delete"/>
                     <input type="hidden" name='productId' value="<%=product._id%>"/>
-               </form>
+                 </form>
+                </div>
+               
+
             </article>
             <%}%>
         <%} else {%>
